@@ -43,7 +43,7 @@
 	for(var/i = 1 to length(message))
 		var/char = message[i]
 		// Randomize or replace characters with gibberish
-		var/chance = 70 + total_stats // 70% + total_stats chance per point of social to keep intact.
+		var/chance = HAS_TRAIT(lasombra, TRAIT_GARBLED_SPEECH) ? 70 : 70 + total_stats // 70% + total_stats chance per point of social to keep intact unless player has this trait. CRIMSON EDIT: var/chance = 70 + total_stats
 		if(prob(chance))
 			gibberish_message += char
 		else
